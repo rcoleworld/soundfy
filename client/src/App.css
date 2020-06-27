@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  /* background-color: rgb(22, 23, 27); */
+}
+
+.title {
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(30, 215, 96) !important;
+  margin-bottom: 5%;
+  font-size: 42px;
+}
+
+.login-header {
+  font-weight: bolder !important;
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.login-text {
+  text-align: center;
+}
+
+.login-card {
+  width: 300px;
+  border: none !important;
+  /* margin-top: 20vw !important; */
+  background-color: rbg(40, 40, 40) !important;
+  position: relative;
+  margin: auto;
+}
+
+
+.spotify-login-button {
+  border: none !important;
+  vertical-align: middle;
+  margin-top: 50px;
+  background-color: rgb(30, 215, 96) !important;
+  width: 90%;
+}
+
+.spotify-logo {
+  /* margin: auto; */
+  vertical-align: middle;
+  width: 10%;
+  height: 20%;
+  float: left;
+}
+.grow {
+  transition: box-shadow .2s,transform .2s
+}
+
+.grow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 10px 2px rgba(0,0,0,.35) !important;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  margin-top: -100px;
+  margin-bottom: -200px;
+}
+
+.slogan {
+  margin-top: -100px;
+}
+
+.search-container {
+  padding-top: 80px;
+  margin-top: 100px;
+  height: 50vh;
+  background-image: linear-gradient(to right, rgb(64, 46, 165) , rgb(49, 67, 219));
+}
+
+.search-group {
+  max-width: 70vw;
+  margin: auto;
+}
+
+.search-bar, .search-bar:focus {
+  border-radius: 25px !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: box-shadow .2s,transform .2s;
+  margin-top: 60px;
+}
+
+
+.search-bar:hover, .search-bar:focus {
+  transform: scale(1.1);
+  box-shadow: 0 2px 10px 2px rgba(0,0,0,.35) !important;
+}
+
+.explore-text {
+  font-weight: bold;
+  color: white;
+  font-size: 14pt;
+}
+
+.more-info-container {
+  height: 40vh;
+  padding-top: 60px;
+}
+
+
+.footer {
+  color: white;
+  background-image: linear-gradient(to right, rgb(64, 46, 165) , rgb(49, 67, 219));
+}
+
+.footer-container {
+  background-image: linear-gradient(to right, rgb(64, 46, 165) , rgb(49, 67, 219));
+  height: 40vh;
+}
+
+.more-info-toasts {
+  margin-bottom: 60px;
+}

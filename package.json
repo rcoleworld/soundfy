@@ -9,7 +9,10 @@
   "author": "Reginald Thomas",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^4.1.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "rc-footer": "^0.6.3",
+    "react-animate-on-scroll": "^2.1.5"
   }
 }

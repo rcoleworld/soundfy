@@ -1,7 +1,9 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
@@ -17,25 +19,27 @@ module.exports = {
         ]
       },
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
+        test: /\.(ts|tsx)$/,
+        loader: "awesome-typescript-loader",
       },
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.tsx', '.ts'],
   },
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
     filename: 'bundle.js',
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),  
+    new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'dist', 'index.html') }),
+  ],
   devServer: {
     port: 3000,
     contentBase: './dist',
-    // hot: true,
+    hot: true,
     compress: true,
   },
 };

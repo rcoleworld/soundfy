@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import {
   Button,
   Collapse,
@@ -14,11 +14,12 @@ import {
 } from 'reactstrap';
 
 import './elements.css';
-import SpotifyLogo from '../../Spotify_Icon_RGB_White.png';
 
-const TopBar = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+const SpotifyLogo = require('../../logos/Spotify_Icon_RGB_White.png');
+
+const TopBar = (props: any) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [isLogin, setIsLogin] = React.useState(false);
 
   const showLogin = () => setIsLogin(!isLogin);
   const toggle = () => setIsOpen(!isOpen);
@@ -44,7 +45,7 @@ const TopBar = (props) => {
         <Modal className='login-card' isOpen={isLogin} toggle={showLogin}>
           <ModalHeader toggle={showLogin}>Sign In</ModalHeader>
           <ModalBody className='login-card'>
-            <Button href='http://localhost:8081/login' className='spotify-login-button grow'>
+            <Button href='http://localhost:5000/auth' className='spotify-login-button grow'>
               <img className='spotify-logo' src={SpotifyLogo} />
               <div className='button-text'>Spotify</div>
             </Button>

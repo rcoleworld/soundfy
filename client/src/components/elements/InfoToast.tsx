@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import { Toast, ToastBody, ToastHeader } from 'reactstrap';
 
-const InfoToast = (props) => {
+const InfoToast = (props: any) => {
   return (
     <Toast className='info-toast'>
       <ToastHeader className='info-header'>{props.header}</ToastHeader>

@@ -29,14 +29,12 @@
 
 .info-toast {
   transition: box-shadow 0.2s, transform 0.2s;
-  position: relative;
-  margin-bottom: 20px !important;
   margin: auto;
   height: 100%;
 }
 
 .info-toast:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .info-header {
@@ -50,7 +48,6 @@
   text-align: left;
   color:rgb(64, 46, 165) !important;
 }
-
 
 .login-card {
     /* border: none !important; */

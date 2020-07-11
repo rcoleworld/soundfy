@@ -1,8 +1,11 @@
 import LoginController from './controllers/LoginController';
 import App from './app';
+import dotenv from 'dotenv';
 
-const PORT: number = Number(process.env.PORT) || 8081;
-const HOST: string = process.env.HOST || '127.0.0.1';
+dotenv.config();
+
+const PORT: number = Number(process.env.PORT) || 5000;
+const HOST: string = process.env.HOST || 'localhost';
 const login = new LoginController()
 const controllers = [login];
 

@@ -118,3 +118,7 @@
 .more-info-toasts {
   margin-bottom: 60px;
 }
+
+.info-toast {
+  margin-bottom: 10px !important;
+}

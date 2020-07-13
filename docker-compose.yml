@@ -1,0 +1,58 @@
+version: '3.7'
+
+services:
+    client:
+        container_name: client
+        build:
+            context: ./client
+            dockerfile: Dockerfile
+        volumes:
+            - './client:/usr/src/app/client'
+            - '/app/client/node_modules'
+        ports:
+            - 3000:3000
+        environment:
+            - NODE_ENV=development
+        restart: on-failure
+
+    auth-service:
+        container_name: auth-service
+        image: auth-service
+        build: 
+            context: ./auth
+            dockerfile: Dockerfile
+        networks:
+            - auth-network
+        ports:
+            - "5000:5000"
+        volumes:
+            - ./auth/:/usr/src/app/auth
+            - /app/node_modules/
+
+    media-service:
+        container_name: media-service
+        image: media-service
+        build: 
+            context: ./media
+            dockerfile: Dockerfile
+        networks:
+            - media-network
+        ports:
+            - "5001:5000"
+        volumes:
+            - ./media/:/usr/src/app/media
+            - /app/node_modules/
+
+    mongo-media:
+        container_name: mongo-media
+        image: mongo:latest
+        networks: 
+            - media-network
+        volumes:
+            - ./mongo-database:/data/db
+            
+networks:
+    auth-network:
+        driver: bridge
+    media-network:
+        driver: bridge

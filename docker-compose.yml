@@ -15,18 +15,18 @@ services:
             - NODE_ENV=development
         restart: on-failure
 
-    auth-service:
-        container_name: auth-service
-        image: auth-service
+    user-service:
+        container_name: user-service
+        image: user-service
         build: 
-            context: ./auth
+            context: ./users
             dockerfile: Dockerfile
         networks:
-            - auth-network
+            - user-network
         ports:
             - "5000:5000"
         volumes:
-            - ./auth/:/usr/src/app/auth
+            - ./users/:/usr/src/app/users
             - /app/node_modules/
 
     media-service:
@@ -52,7 +52,7 @@ services:
             - ./mongo-database:/data/db
             
 networks:
-    auth-network:
+    user-network:
         driver: bridge
     media-network:
         driver: bridge

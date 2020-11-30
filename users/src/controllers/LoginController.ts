@@ -3,17 +3,11 @@
 //
 import express from 'express';
 import { route } from '../config/keys';
+import Controller from './Controller';
 
-export default class LoginController {
-  public path = '/auth';
-  public router = express.Router();
-
-  constructor() {
-    this.intializeRoutes();
-  }
-
-  public intializeRoutes(): void {
-    this.router.get(this.path, this.authenticateSpotify);
+export default class LoginController extends Controller {
+  constructor(path: string) {
+    super(path);
   }
 
   // Redirects user to spotify login.
@@ -21,4 +15,7 @@ export default class LoginController {
     response.redirect(route);
   }
 
+  public intializeRoutes(): void {
+    this.router.get(this.path, this.authenticateSpotify);
+  }
 }

@@ -14,8 +14,6 @@ export enum Type {
   ARTIST = 'artist',
   PLAYLIST = 'playlist',
   TRACK = 'track',
-  SHOW = 'show',
-  EPISODE = 'episode',
 }
 
 export interface IComment extends mongoose.Document {

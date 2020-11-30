@@ -21,7 +21,6 @@ export default class App {
 
   private initializeMiddlewares(): void {
     this.app.use(cors());
-    this.app.use(bodyParser());
   }
 
   public initializeControllers(controllers: any): void {

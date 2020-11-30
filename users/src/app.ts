@@ -3,7 +3,6 @@
 //
 
 import express from 'express';
-import bodyParser from 'body-parser';
 import cors from 'cors';
 
 export default class App {
@@ -21,7 +20,6 @@ export default class App {
 
   private initializeMiddlewares(): void {
     this.app.use(cors());
-    this.app.use(bodyParser());
   }
 
   public initializeControllers(controllers: any): void {

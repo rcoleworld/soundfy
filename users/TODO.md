@@ -1,1 +1,0 @@
-[-] Use this method for auth (Authorization Code Flow with Proof Key for Code Exchange (PKCE)) - https://developer.spotify.com/documentation/general/guides/authorization-guide/#authorization-code-flow

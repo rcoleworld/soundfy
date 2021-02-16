@@ -12,32 +12,18 @@ services:
             - NODE_ENV=production
         restart: on-failure
 
-    user-service:
-        container_name: user-service
-        image: user-service
+    soundfy-api:
+        container_name: soundfy-api
+        image: soundfy-api
         build: 
-            context: ./users
+            context: ./api
             dockerfile: Dockerfile
         networks:
-            - user-network
+            - api-network
         ports:
             - "5000:5000"
         volumes:
-            - ./users/:/usr/src/app/users
-            - /app/node_modules/
-
-    media-service:
-        container_name: media-service
-        image: media-service
-        build: 
-            context: ./media
-            dockerfile: Dockerfile
-        networks:
-            - media-network
-        ports:
-            - "5001:5000"
-        volumes:
-            - ./media/:/usr/src/app/media
+            - ./api/:/usr/src/app/api
             - /app/node_modules/
 
     mongo-media:
@@ -49,7 +35,6 @@ services:
             - ./mongo-database:/data/db
             
 networks:
-    user-network:
+    api-network:
         driver: bridge
-    media-network:
-        driver: bridge
+   
